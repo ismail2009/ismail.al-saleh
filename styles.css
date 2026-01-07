@@ -97,6 +97,10 @@ h3 {
     padding: var(--space-xxxl) 0;
 }
 
+.section:first-of-type {
+    padding-top: var(--space-xl);
+}
+
 .section-title {
     text-align: center;
     margin-bottom: var(--space-xl);
@@ -184,6 +188,8 @@ h3 {
     align-items: center;
     background: linear-gradient(135deg, var(--page-bg) 0%, var(--surface) 100%);
     padding-top: 80px;
+    padding-bottom: var(--space-xxl);
+    margin-bottom: var(--space-xl);
 }
 
 .hero-content {
@@ -277,6 +283,41 @@ h3 {
 
 .contact-item i {
     color: var(--primary-500);
+}
+
+.social-links {
+    display: flex;
+    justify-content: center;
+    gap: var(--space-md);
+    margin-bottom: var(--space-xl);
+    flex-wrap: wrap;
+}
+
+.social-links a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    background: var(--surface);
+    color: var(--text-secondary);
+    border: 2px solid var(--border);
+    transition: var(--transition);
+    text-decoration: none;
+}
+
+.social-links a:hover {
+    background: var(--primary-500);
+    color: white;
+    border-color: var(--primary-500);
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-hover);
+}
+
+.social-links a i {
+    width: 20px;
+    height: 20px;
 }
 
 .hero-cta {
@@ -511,11 +552,24 @@ h3 {
 }
 
 /* Projects Section */
+.projects-category-title {
+    font-size: var(--font-size-h3);
+    font-weight: 600;
+    color: var(--text-primary);
+    margin-top: var(--space-xxl);
+    margin-bottom: var(--space-md);
+}
+
+.projects-category-title:first-of-type {
+    margin-top: 0;
+}
+
 .projects-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
     gap: var(--space-lg);
     margin-top: var(--space-xl);
+    margin-bottom: var(--space-xl);
 }
 
 .project-card {
@@ -564,6 +618,90 @@ h3 {
     border-radius: var(--radius-sm);
     font-size: var(--font-size-small);
     font-weight: 500;
+}
+
+.project-image {
+    width: 100%;
+    height: 200px;
+    overflow: hidden;
+    border-radius: var(--radius-md);
+    margin-bottom: var(--space-md);
+    background: var(--page-bg);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.project-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: var(--transition-slow);
+}
+
+.project-image:hover img {
+    transform: scale(1.05);
+}
+
+/* Reviews Section */
+.reviews-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: var(--space-lg);
+    margin-top: var(--space-xl);
+}
+
+.review-card {
+    background: var(--surface);
+    padding: var(--space-lg);
+    border-radius: var(--radius-md);
+    box-shadow: var(--shadow-standard);
+    transition: var(--transition-slow);
+    text-align: center;
+}
+
+.review-card:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-hover);
+}
+
+.review-avatar {
+    width: 80px;
+    height: 80px;
+    margin: 0 auto var(--space-md);
+    border-radius: 50%;
+    overflow: hidden;
+    border: 3px solid var(--primary-100);
+}
+
+.review-avatar img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.review-rating {
+    display: flex;
+    justify-content: center;
+    gap: 4px;
+    margin-bottom: var(--space-md);
+}
+
+.review-rating i {
+    width: 20px;
+    height: 20px;
+    color: var(--warning);
+    fill: var(--warning);
+}
+
+.review-text {
+    color: var(--text-secondary);
+    font-style: italic;
+    line-height: 1.6;
+}
+
+.review-text p {
+    margin: 0;
 }
 
 /* Education Section */
@@ -711,6 +849,14 @@ h3 {
     .projects-grid {
         grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
     }
+    
+    .project-image {
+        height: 180px;
+    }
+    
+    .reviews-grid {
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    }
 }
 
 @media (max-width: 768px) {
@@ -784,6 +930,14 @@ h3 {
     .projects-grid {
         grid-template-columns: 1fr;
     }
+    
+    .project-image {
+        height: 200px;
+    }
+    
+    .reviews-grid {
+        grid-template-columns: 1fr;
+    }
 }
 
 @media (max-width: 480px) {
@@ -821,6 +975,15 @@ h3 {
     .mentoring-section,
     .contact-form {
         padding: var(--space-md);
+    }
+    
+    .project-image {
+        height: 180px;
+    }
+    
+    .review-avatar {
+        width: 60px;
+        height: 60px;
     }
 }
 
@@ -876,6 +1039,11 @@ a:focus {
     outline-offset: 2px;
 }
 
+.ratings i {
+    font-size: 23px;
+    color: #FDCC0D;
+    margin-right: 5px;
+}
 /* Smooth scrolling */
 html {
     scroll-behavior: smooth;
