@@ -321,7 +321,7 @@ h3 {
 }
 
 .social-links a i {
-    font-size: 20px;
+    /* font-size: 20px; */
 }
 
 .hero-cta {
@@ -661,7 +661,7 @@ h3 {
     border-radius: var(--radius-md);
     box-shadow: var(--shadow-standard);
     transition: var(--transition-slow);
-    text-align: center;
+    text-align: left;
 }
 
 .review-card:hover {
@@ -669,13 +669,26 @@ h3 {
     box-shadow: var(--shadow-hover);
 }
 
+.review-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: var(--space-md);
+}
+
+.review-meta {
+    display: flex;
+    align-items: center;
+    gap: var(--space-sm);
+}
+
 .review-avatar {
-    width: 80px;
-    height: 80px;
-    margin: 0 auto var(--space-md);
+    width: 60px;
+    height: 60px;
     border-radius: 50%;
     overflow: hidden;
     border: 3px solid var(--primary-100);
+    flex-shrink: 0;
 }
 
 .review-avatar img {
@@ -684,18 +697,37 @@ h3 {
     object-fit: cover;
 }
 
-.review-rating {
-    display: flex;
-    justify-content: center;
-    gap: 4px;
-    margin-bottom: var(--space-md);
+.review-meta-text h4 {
+    margin: 0 0 4px 0;
+    font-size: 16px;
+    color: var(--text-primary);
 }
 
-.review-rating i {
-    width: 20px;
-    height: 20px;
+.review-meta-text span {
+    font-size: 14px;
+    color: var(--text-secondary);
+}
+
+.review-linkedin {
+    color: #0077b5;
+    font-size: 28px;
+    transition: var(--transition);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+}
+
+.review-linkedin:hover {
+    transform: scale(1.1);
+    color: #005885;
+}
+
+.review-ratings {
+    display: flex;
+    gap: 4px;
+    margin-bottom: var(--space-sm);
     color: var(--warning);
-    fill: var(--warning);
 }
 
 .review-text {
@@ -1055,4 +1087,22 @@ a:focus {
 /* Smooth scrolling */
 html {
     scroll-behavior: smooth;
+}
+
+/* Footer Section */
+.footer {
+    background: var(--surface);
+    padding: var(--space-xl) 0 var(--space-lg);
+    text-align: center;
+    border-top: 1px solid var(--border);
+    color: var(--text-secondary);
+}
+
+.footer p {
+    margin-bottom: var(--space-xs);
+}
+
+.footer p:last-child {
+    margin-bottom: 0;
+    font-size: var(--font-size-small);
 }
