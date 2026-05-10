@@ -325,7 +325,8 @@ function createMobileMenu() {
             });
         });
 
-        navbar.appendChild(mobileMenuBtn);
+        const navRight = document.querySelector('.nav-right') || navbar;
+        navRight.appendChild(mobileMenuBtn);
     }
 
     if (window.innerWidth <= 768) {
