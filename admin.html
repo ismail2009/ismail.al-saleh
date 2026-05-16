@@ -1,0 +1,699 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Portfolio Admin Dashboard</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="assets/css/styles.css" />
+    <style>
+      body {
+        background-color: var(--page-bg);
+        padding: 2rem;
+      }
+
+      .admin-container {
+        max-width: 860px;
+        margin: 0 auto;
+      }
+
+      .admin-card {
+        background: var(--surface);
+        padding: 2rem;
+        border-radius: var(--radius-md);
+        box-shadow: var(--shadow-standard);
+        margin-bottom: 2rem;
+      }
+
+      .hidden {
+        display: none !important;
+      }
+
+      .admin-card h3 {
+        margin-bottom: 1.25rem;
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+      }
+
+      .form-group {
+        margin-bottom: 1.25rem;
+      }
+
+      .form-group label {
+        display: block;
+        margin-bottom: 0.4rem;
+        font-weight: 500;
+        font-size: 0.875rem;
+      }
+
+      .form-group input,
+      .form-group textarea,
+      .form-group select {
+        width: 100%;
+        padding: 0.75rem;
+        border: 1px solid var(--border);
+        border-radius: var(--radius-sm);
+        font-family: inherit;
+        font-size: 0.875rem;
+      }
+
+      .form-row {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 1rem;
+      }
+
+      .item-list {
+        margin-top: 1rem;
+        display: flex;
+        flex-direction: column;
+        gap: 0.5rem;
+      }
+
+      .list-item {
+        border: 1px solid var(--border);
+        padding: 0.75rem 1rem;
+        border-radius: var(--radius-sm);
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        background: var(--page-bg);
+      }
+
+      .list-item strong {
+        font-size: 0.9rem;
+      }
+
+      .list-item span {
+        font-size: 0.8rem;
+        color: var(--text-secondary);
+      }
+
+      .danger-btn {
+        background: #dc2626;
+        color: white;
+        border: none;
+        padding: 0.4rem 0.8rem;
+        border-radius: var(--radius-sm);
+        cursor: pointer;
+        font-size: 0.8rem;
+      }
+
+      .success-text {
+        color: #16a34a;
+        font-weight: 500;
+        font-size: 0.875rem;
+      }
+
+      .section-divider {
+        border: none;
+        border-top: 2px solid var(--border);
+        margin: 0;
+      }
+
+      .admin-nav {
+        display: flex;
+        gap: 0.5rem;
+        flex-wrap: wrap;
+        margin-bottom: 1.5rem;
+      }
+
+      .admin-nav button {
+        padding: 0.5rem 1rem;
+        border: 1px solid var(--border);
+        border-radius: var(--radius-sm);
+        background: var(--surface);
+        cursor: pointer;
+        font-size: 0.875rem;
+      }
+
+      .admin-nav button.active {
+        background: var(--primary-500);
+        color: white;
+        border-color: var(--primary-500);
+      }
+
+      .tab-panel {
+        display: none;
+      }
+
+      .tab-panel.active {
+        display: block;
+      }
+
+      @media (max-width: 600px) {
+        .form-row {
+          grid-template-columns: 1fr;
+        }
+
+        body {
+          padding: 1rem;
+        }
+      }
+    </style>
+  </head>
+
+  <body>
+    <!-- ==================== LOGIN ==================== -->
+    <div class="admin-container" id="loginSection">
+      <div class="admin-card">
+        <h2>🔐 Admin Login</h2>
+        <form id="loginForm">
+          <div class="form-group">
+            <label>Email</label>
+            <input
+              type="email"
+              id="loginEmail"
+              required
+              placeholder="your@email.com"
+            />
+          </div>
+          <div class="form-group">
+            <label>Password</label>
+            <input
+              type="password"
+              id="loginPassword"
+              required
+              placeholder="Password"
+            />
+          </div>
+          <button type="submit" class="btn btn-primary" style="width: 100%">
+            Login
+          </button>
+          <p
+            id="loginError"
+            style="color: red; margin-top: 0.75rem; font-size: 0.875rem"
+          ></p>
+        </form>
+      </div>
+    </div>
+
+    <!-- ==================== DASHBOARD ==================== -->
+    <div class="admin-container hidden" id="dashboardSection">
+      <div
+        style="
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          margin-bottom: 1.5rem;
+        "
+      >
+        <h2 style="margin: 0">⚡ Portfolio Dashboard</h2>
+        <button id="logoutBtn" class="btn btn-secondary">Logout</button>
+      </div>
+
+      <!-- Tab Navigation -->
+      <div class="admin-nav">
+        <button class="active" data-tab="tab-about">About</button>
+        <button data-tab="tab-contact">Contact</button>
+        <button data-tab="tab-skills">Skills</button>
+        <button data-tab="tab-projects">Projects</button>
+        <button data-tab="tab-reviews">Reviews</button>
+        <button data-tab="tab-socials">Social Links</button>
+        <button
+          data-tab="tab-seed"
+          style="
+            margin-left: auto;
+            background: #7c3aed;
+            color: white;
+            border-color: #7c3aed;
+          "
+        >
+          ⚡ Seed Data
+        </button>
+      </div>
+
+      <!-- ===== ABOUT TAB ===== -->
+      <div class="tab-panel active" id="tab-about">
+        <div class="admin-card">
+          <h3>✏️ Edit About / Hero Section</h3>
+          <form id="aboutForm">
+            <div class="form-group">
+              <label>Subtitle (tagline)</label>
+              <input type="text" id="aboutSubtitle" required />
+            </div>
+            <div class="form-group">
+              <label>Description paragraph</label>
+              <textarea id="aboutDescription" rows="4" required></textarea>
+            </div>
+            <button type="submit" class="btn btn-primary">
+              Save About Info
+            </button>
+            <span
+              id="aboutSuccess"
+              class="success-text"
+              style="margin-left: 1rem; display: none"
+              >✅ Saved!</span
+            >
+          </form>
+        </div>
+
+        <div class="admin-card">
+          <h3>📄 CV / Resume — Google Drive</h3>
+          <p
+            style="
+              color: var(--text-secondary);
+              font-size: 0.875rem;
+              margin-bottom: 1rem;
+            "
+          >
+            Paste your Google Drive share link. We'll convert it automatically
+            into a direct download URL for the "Download CV" button.
+          </p>
+
+          <div
+            style="
+              background: var(--page-bg);
+              border: 1px solid var(--border);
+              border-radius: var(--radius-sm);
+              padding: 0.875rem;
+              margin-bottom: 1.25rem;
+              font-size: 0.8rem;
+              line-height: 1.7;
+            "
+          >
+            <strong>How to get your Google Drive link:</strong><br />
+            1. Open your CV file in Google Drive<br />
+            2. Right-click → <strong>Share</strong> →
+            <strong>Anyone with the link</strong> → Copy link<br />
+            3. Paste it below — it looks like:<br />
+            <code style="color: var(--primary-500); word-break: break-all"
+              >https://drive.google.com/file/d/<strong>FILE_ID</strong>/view?usp=sharing</code
+            >
+          </div>
+
+          <form id="cvUrlForm">
+            <div class="form-group">
+              <label>Google Drive Share Link</label>
+              <input
+                type="url"
+                id="cvUrl"
+                placeholder="https://drive.google.com/file/d/.../view?usp=sharing"
+                required
+              />
+            </div>
+
+            <div
+              id="cvPreview"
+              style="
+                display: none;
+                margin-bottom: 1.25rem;
+                padding: 0.875rem;
+                background: var(--page-bg);
+                border: 1px solid var(--border);
+                border-radius: var(--radius-sm);
+                font-size: 0.8rem;
+              "
+            >
+              <strong>Generated links:</strong><br />
+              <span style="color: var(--text-secondary)">⬇ Download:</span>
+              <a
+                id="cvDownloadPreview"
+                href="#"
+                target="_blank"
+                style="
+                  color: var(--primary-500);
+                  word-break: break-all;
+                  display: block;
+                  margin: 0.2rem 0 0.5rem;
+                "
+              ></a>
+              <span style="color: var(--text-secondary)">👁 Preview:</span>
+              <a
+                id="cvPreviewLink"
+                href="#"
+                target="_blank"
+                style="
+                  color: var(--primary-500);
+                  word-break: break-all;
+                  display: block;
+                  margin: 0.2rem 0;
+                "
+              ></a>
+            </div>
+
+            <button type="submit" class="btn btn-primary">
+              Save CV Links to Firestore
+            </button>
+            <span
+              id="cvUrlSuccess"
+              class="success-text"
+              style="margin-left: 1rem; display: none"
+              >✅ Saved!</span
+            >
+          </form>
+        </div>
+      </div>
+
+      <!-- ===== CONTACT TAB ===== -->
+      <div class="tab-panel" id="tab-contact">
+        <div class="admin-card">
+          <h3>📬 Edit Contact Details</h3>
+          <form id="contactForm">
+            <div class="form-row">
+              <div class="form-group">
+                <label>Email Address</label>
+                <input type="email" id="contactEmail" required />
+              </div>
+              <div class="form-group">
+                <label>WhatsApp URL (e.g. https://wa.me/12345)</label>
+                <input type="url" id="contactWhatsapp" />
+              </div>
+            </div>
+            <div class="form-group">
+              <label>Calendly Link</label>
+              <input
+                type="url"
+                id="contactCalendly"
+                placeholder="https://calendly.com/..."
+              />
+            </div>
+            <button type="submit" class="btn btn-primary">
+              Save Contact Info
+            </button>
+            <span
+              id="contactSuccess"
+              class="success-text"
+              style="margin-left: 1rem; display: none"
+              >✅ Saved!</span
+            >
+          </form>
+        </div>
+      </div>
+
+      <!-- ===== SKILLS TAB ===== -->
+      <div class="tab-panel" id="tab-skills">
+        <div class="admin-card">
+          <h3>🛠 Add Skill Category</h3>
+          <form id="skillForm">
+            <input type="hidden" id="editSkillId" value="" />
+            <div class="form-row">
+              <div class="form-group">
+                <label>Category Name</label>
+                <input
+                  type="text"
+                  id="skillCategory"
+                  placeholder="e.g. Frontend"
+                  required
+                />
+              </div>
+              <div class="form-group">
+                <label>Icon (Lucide icon name)</label>
+                <input
+                  type="text"
+                  id="skillIcon"
+                  placeholder="e.g. monitor, server, database"
+                />
+              </div>
+            </div>
+            <div class="form-group">
+              <label>Tags (comma separated)</label>
+              <input
+                type="text"
+                id="skillTags"
+                placeholder="React, Node, HTML, CSS"
+                required
+              />
+            </div>
+            <div class="form-group">
+              <label>Display Order (e.g. 1 shows first)</label>
+              <input type="number" id="skillOrder" value="1" required />
+            </div>
+            <div style="display: flex; gap: 1rem">
+              <button type="submit" id="submitSkillBtn" class="btn btn-primary">
+                Add Skill Category
+              </button>
+              <button
+                type="button"
+                id="cancelSkillEditBtn"
+                class="btn btn-secondary"
+                style="display: none"
+              >
+                Cancel Edit
+              </button>
+            </div>
+          </form>
+          <div class="item-list" id="skillList"></div>
+        </div>
+      </div>
+
+      <!-- ===== PROJECTS TAB ===== -->
+      <div class="tab-panel" id="tab-projects">
+        <div class="admin-card">
+          <h3>🚀 Add New Project</h3>
+          <form id="projectForm">
+            <input type="hidden" id="editProjectId" value="" />
+            <div class="form-row">
+              <div class="form-group">
+                <label>Project Title</label>
+                <input type="text" id="projTitle" required />
+              </div>
+              <div class="form-group">
+                <label>Category (e.g. Websites, Mobile Apps)</label>
+                <input type="text" id="projCategory" required />
+              </div>
+            </div>
+            <div class="form-group">
+              <label>Image URL</label>
+              <input
+                type="text"
+                id="projImage"
+                placeholder="img/project.png or https://..."
+                required
+              />
+            </div>
+            <div class="form-row">
+              <div class="form-group">
+                <label>Challenge</label>
+                <textarea id="projChallenge" rows="2" required></textarea>
+              </div>
+              <div class="form-group">
+                <label>Result</label>
+                <textarea id="projResult" rows="2" required></textarea>
+              </div>
+            </div>
+            <div class="form-group">
+              <label>Tech Stack (comma separated)</label>
+              <input
+                type="text"
+                id="projTech"
+                placeholder="React, Node.js, Firebase"
+                required
+              />
+            </div>
+            <div class="form-group">
+              <label>Project Link (URL)</label>
+              <input type="url" id="projLink" placeholder="https://..." />
+            </div>
+            <div style="display: flex; gap: 1rem">
+              <button
+                type="submit"
+                id="submitProjectBtn"
+                class="btn btn-primary"
+              >
+                Add Project
+              </button>
+              <button
+                type="button"
+                id="cancelProjectEditBtn"
+                class="btn btn-secondary"
+                style="display: none"
+              >
+                Cancel Edit
+              </button>
+            </div>
+          </form>
+          <div class="item-list" id="adminProjectsList"></div>
+        </div>
+      </div>
+
+      <!-- ===== REVIEWS TAB ===== -->
+      <div class="tab-panel" id="tab-reviews">
+        <div class="admin-card">
+          <h3>⭐ Add Client Review</h3>
+          <form id="reviewForm">
+            <input type="hidden" id="editReviewId" value="" />
+            <div class="form-row">
+              <div class="form-group">
+                <label>Client Name</label>
+                <input type="text" id="reviewName" required />
+              </div>
+              <div class="form-group">
+                <label>Client Role / Company</label>
+                <input type="text" id="reviewRole" required />
+              </div>
+            </div>
+            <div class="form-group">
+              <label>Review Text</label>
+              <textarea id="reviewText" rows="3" required></textarea>
+            </div>
+            <div class="form-row">
+              <div class="form-group">
+                <label>Rating (1-5)</label>
+                <input
+                  type="number"
+                  id="reviewRating"
+                  min="1"
+                  max="5"
+                  value="5"
+                  required
+                />
+              </div>
+              <div class="form-group">
+                <label>Avatar URL (optional)</label>
+                <input
+                  type="text"
+                  id="reviewAvatar"
+                  placeholder="img/client.jpg"
+                />
+              </div>
+              <div class="form-group">
+                <label>LinkedIn Recommendation URL (optional)</label>
+                <input
+                  type="url"
+                  id="reviewLinkedin"
+                  placeholder="https://linkedin.com/..."
+                />
+              </div>
+            </div>
+            <div style="display: flex; gap: 1rem">
+              <button
+                type="submit"
+                id="submitReviewBtn"
+                class="btn btn-primary"
+              >
+                Add Review
+              </button>
+              <button
+                type="button"
+                id="cancelReviewEditBtn"
+                class="btn btn-secondary"
+                style="display: none"
+              >
+                Cancel Edit
+              </button>
+            </div>
+          </form>
+          <div class="item-list" id="reviewList"></div>
+        </div>
+      </div>
+
+      <!-- ===== SOCIAL LINKS TAB ===== -->
+      <div class="tab-panel" id="tab-socials">
+        <div class="admin-card">
+          <h3>🔗 Add Social / Coding Profile</h3>
+          <p
+            style="
+              color: var(--text-secondary);
+              font-size: 0.875rem;
+              margin-bottom: 1rem;
+            "
+          >
+            Select a platform and enter your profile URL. The official SVG logo
+            will automatically render on your portfolio.
+          </p>
+          <form id="socialForm">
+            <input type="hidden" id="editSocialId" value="" />
+            <div class="form-row">
+              <div class="form-group">
+                <label>Platform</label>
+                <select
+                  id="socialPlatform"
+                  required
+                  style="
+                    width: 100%;
+                    padding: 0.75rem;
+                    border: 1px solid var(--border);
+                    border-radius: var(--radius-sm);
+                    background: var(--page-bg);
+                    color: var(--text-primary);
+                  "
+                >
+                  <option value="" disabled selected>Select Platform...</option>
+                  <option value="LinkedIn">LinkedIn</option>
+                  <option value="GitHub">GitHub</option>
+                  <option value="GitLab">GitLab</option>
+                  <option value="HackerRank">HackerRank</option>
+                  <option value="CodeWars">CodeWars</option>
+                  <option value="freeCodeCamp">freeCodeCamp</option>
+                  <option value="LeetCode">LeetCode</option>
+                  <option value="Facebook">Facebook</option>
+                  <option value="Twitter">Twitter / X</option>
+                  <option value="Instagram">Instagram</option>
+                  <option value="YouTube">YouTube</option>
+                  <option value="Website">Personal Website / Other</option>
+                </select>
+              </div>
+              <div class="form-group">
+                <label>Profile URL</label>
+                <input
+                  type="url"
+                  id="socialUrl"
+                  placeholder="https://..."
+                  required
+                />
+              </div>
+            </div>
+            <div class="form-group">
+              <label>Display Order (e.g. 1 shows first)</label>
+              <input type="number" id="socialOrder" value="1" required />
+            </div>
+            <div style="display: flex; gap: 1rem">
+              <button
+                type="submit"
+                id="submitSocialBtn"
+                class="btn btn-primary"
+              >
+                Add Link
+              </button>
+              <button
+                type="button"
+                id="cancelSocialEditBtn"
+                class="btn btn-secondary"
+                style="display: none"
+              >
+                Cancel Edit
+              </button>
+            </div>
+          </form>
+          <div class="item-list" id="socialList"></div>
+        </div>
+      </div>
+
+      <!-- ===== SEED TAB ===== -->
+      <div class="tab-panel" id="tab-seed">
+        <div class="admin-card">
+          <h3>⚡ Seed All Default Data</h3>
+          <p
+            style="
+              color: var(--text-secondary);
+              font-size: 0.875rem;
+              margin-bottom: 1rem;
+            "
+          >
+            This will replace ALL existing data in Firestore with the
+            pre-defined defaults from <code>seed-firebase.js</code>. Use this to
+            do a first-time setup or full reset.
+          </p>
+          <button
+            id="seedBtn"
+            class="btn btn-primary"
+            style="background: #7c3aed; border-color: #7c3aed"
+          >
+            Seed Everything to Firebase
+          </button>
+          <p
+            id="seedStatus"
+            style="margin-top: 1rem; font-weight: 500; font-size: 0.875rem"
+          ></p>
+        </div>
+      </div>
+    </div>
+
+    <script type="module" src="assets/js/admin.js"></script>
+  </body>
+</html>

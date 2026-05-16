@@ -1,685 +1,600 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Ismail S. Al-Saleh - Senior Frontend Developer</title>
-    <meta name="description"
-        content="Senior Frontend Developer with 5+ years specializing in the React ecosystem. Expert in TypeScript migrations, cross-platform mobile development, and building scalable applications.">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link rel="stylesheet" href="font-awesome/css/font-awesome.min.css" />
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <meta
+      name="description"
+      content="Senior Frontend Developer with 5+ years specializing in the React ecosystem. Expert in TypeScript migrations, cross-platform mobile development, and building scalable applications."
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      rel="stylesheet"
+      href="assets/font-awesome/css/font-awesome.min.css"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
     <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
-    <link rel="stylesheet" href="styles.css">
-    <link rel="icon" type="image/svg+xml"
-        href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Crect width='24' height='24' rx='4' fill='%230057FF' /%3E%3Cpolyline points='7 8 3 12 7 16' fill='none' stroke='white' stroke-width='2.5' stroke-linecap='round' stroke-linejoin='round' /%3E%3Cline x1='14' y1='4' x2='10' y2='20' fill='none' stroke='white' stroke-width='2.5' stroke-linecap='round' stroke-linejoin='round' /%3E%3Cpolyline points='17 8 21 12 17 16' fill='none' stroke='white' stroke-width='2.5' stroke-linecap='round' stroke-linejoin='round' /%3E%3C/svg%3E">
-</head>
+    <link rel="stylesheet" href="assets/css/styles.css" />
+    <link
+      rel="icon"
+      type="image/svg+xml"
+      href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Crect width='24' height='24' rx='4' fill='%230057FF' /%3E%3Cpolyline points='7 8 3 12 7 16' fill='none' stroke='white' stroke-width='2.5' stroke-linecap='round' stroke-linejoin='round' /%3E%3Cline x1='14' y1='4' x2='10' y2='20' fill='none' stroke='white' stroke-width='2.5' stroke-linecap='round' stroke-linejoin='round' /%3E%3Cpolyline points='17 8 21 12 17 16' fill='none' stroke='white' stroke-width='2.5' stroke-linecap='round' stroke-linejoin='round' /%3E%3C/svg%3E"
+    />
+  </head>
 
-<body>
+  <body>
     <!-- Navigation -->
     <nav class="navbar">
-        <div class="container">
-            <div class="nav-brand">Ismail S. Al-Saleh</div>
-            <div class="nav-right" style="display: flex; align-items: center; gap: 2rem;">
-                <div class="nav-links">
-                    <a href="#about">About</a>
-                    <a href="#skills">Skills</a>
-                    <a href="#experience">Experience</a>
-                    <a href="#projects">Projects</a>
-                    <a href="#reviews">Reviews</a>
-                    <a href="#education">Education</a>
-                    <a href="#contact">Contact</a>
-                </div>
-                <a href="https://calendly.com/ismail-alsaleh/30min" target="_blank" rel="noopener noreferrer"
-                    class="btn btn-primary"
-                    style="padding: 0.5rem 1.25rem; font-size: 0.875rem; white-space: nowrap;">Book Consultation</a>
-            </div>
+      <div class="container">
+        <div class="nav-brand">Ismail S. Al-Saleh</div>
+        <div
+          class="nav-right"
+          style="display: flex; align-items: center; gap: 2rem"
+        >
+          <div class="nav-links">
+            <a href="#about">About</a>
+            <a href="#skills">Skills</a>
+            <a href="#experience">Experience</a>
+            <a href="#projects">Projects</a>
+            <a href="#reviews">Reviews</a>
+            <a href="#education">Education</a>
+            <a href="#contact">Contact</a>
+          </div>
+          <a
+            href="https://calendly.com/ismail-alsaleh/30min"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="btn btn-primary"
+            style="
+              padding: 0.5rem 1.25rem;
+              font-size: 0.875rem;
+              white-space: nowrap;
+            "
+            >Book Consultation</a
+          >
         </div>
+      </div>
     </nav>
 
     <!-- Hero Section -->
     <section class="hero" id="about">
-        <div class="container">
-            <div class="hero-content">
-                <div class="hero-layout">
-                    <div class="hero-photo">
-                        <img src="https://avatars.githubusercontent.com/u/29161826?s=400&u=c3b12574c42be8ceac03a008b1a0be3ec83fa7d5&v=4"
-                            alt="Ismail S. Al-Saleh" class="profile-img">
-                        <div class="photo-decoration"></div>
-                    </div>
-                    <div class="hero-text">
-                        <h1 class="hero-title">Ismail S. Al-Saleh</h1>
-                        <p class="hero-subtitle">Senior Frontend Developer</p>
-                        <p class="hero-description">
-                            Senior Frontend Developer with 5+ years specializing in the React ecosystem. Expert in
-                            TypeScript migrations,
-                            cross-platform mobile development, and building scalable applications. Proven track record
-                            of deploying 7+ apps
-                            to app stores and enhancing code quality through modern development practices.
-                        </p>
-                        <div class="contact-links">
-                            <div class="contact-item">
-                                <i data-lucide="mail"></i>
-                                <span><a href="mailto:ismail.1996.1.9@gmail.com">ismail.1996.1.9@gmail.com</a></span>
-                            </div>
-                            <div class="contact-item">
-                                <i data-lucide="phone"></i>
-                                <span>(+970) 592742081</span>
-                            </div>
-                        </div>
-                        <div class="social-links">
-                            <a href="https://www.facebook.com/ismail.salah.2009" target="_blank"
-                                rel="noopener noreferrer" aria-label="Facebook">
-                                <i class="fa fa-facebook"></i>
-                            </a>
-                            <a href="https://github.com/ismail2009/" target="_blank" rel="noopener noreferrer"
-                                aria-label="GitHub">
-                                <i class="fa fa-github"></i>
-                            </a>
-                            <a href="https://www.linkedin.com/in/ismail-alsaleh/" target="_blank"
-                                rel="noopener noreferrer" aria-label="LinkedIn">
-                                <i class="fa fa-linkedin"></i>
-                            </a>
-                            <a href="https://gitlab.com/ismail2009" target="_blank" rel="noopener noreferrer"
-                                aria-label="GitLab">
-                                <i class="fa fa-gitlab"></i>
-                            </a>
-                        </div>
-                        <div class="hero-cta">
-                            <a href="https://calendly.com/ismail-alsaleh/30min" target="_blank"
-                                rel="noopener noreferrer" class="btn btn-primary">Book Consultation</a>
-                            <a href="#contact" class="btn btn-secondary">Get In Touch</a>
-                        </div>
-                    </div>
-                </div>
+      <div class="container">
+        <div class="hero-content">
+          <div class="hero-layout">
+            <div class="hero-photo">
+              <img
+                src="https://avatars.githubusercontent.com/u/29161826?s=400&u=c3b12574c42be8ceac03a008b1a0be3ec83fa7d5&v=4"
+                alt="Ismail S. Al-Saleh"
+                class="profile-img"
+              />
+              <div class="photo-decoration"></div>
             </div>
+            <div class="hero-text">
+              <h1 class="hero-title">Ismail S. Al-Saleh</h1>
+              <p class="hero-subtitle">
+                I build fast, scalable, and revenue-generating web & mobile
+                applications.
+              </p>
+              <p class="hero-description">
+                Senior Frontend Developer with 5+ years specializing in the
+                React ecosystem. I help businesses transform their ideas into
+                pixel-perfect, high-performance applications that users love.
+                From complex TypeScript migrations to deploying full-stack
+                mobile apps, I deliver code that scales and solves real business
+                problems.
+              </p>
+              <div class="hero-cta">
+                <a
+                  href="https://calendly.com/ismail-alsaleh/30min"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="btn btn-primary"
+                  >Book Consultation</a
+                >
+                <a
+                  href="assets/docs/resume.pdf"
+                  id="cv-download-btn"
+                  target="_blank"
+                  class="btn btn-secondary"
+                  >⬇ Download CV</a
+                >
+                <button
+                  id="cv-preview-btn"
+                  class="btn btn-secondary"
+                  style="display: none"
+                >
+                  👁 View CV
+                </button>
+              </div>
+              <div class="social-links" id="dynamic-social-links">
+                <!-- Dynamically populated from Firestore via script.js -->
+              </div>
+            </div>
+          </div>
         </div>
+      </div>
     </section>
 
     <!-- Skills Section -->
     <section id="skills" class="section bg-light">
-        <div class="container">
-            <h2 class="section-title">Technical Skills</h2>
-            <div class="skills-grid">
-                <div class="skill-category">
-                    <h3 class="category-title">
-                        <i data-lucide="monitor"></i>
-                        Frontend
-                    </h3>
-                    <div class="skill-tags">
-                        <span class="skill-tag">React.js</span>
-                        <span class="skill-tag">React Native</span>
-                        <span class="skill-tag">Next.js</span>
-                        <span class="skill-tag">Redux</span>
-                        <span class="skill-tag">Mobx-state-tree</span>
-                        <span class="skill-tag">Material-UI</span>
-                        <span class="skill-tag">HTML5</span>
-                        <span class="skill-tag">CSS3</span>
-                    </div>
-                </div>
-                <div class="skill-category">
-                    <h3 class="category-title">
-                        <i data-lucide="server"></i>
-                        Backend
-                    </h3>
-                    <div class="skill-tags">
-                        <span class="skill-tag">Node.js</span>
-                        <span class="skill-tag">FeathersJS</span>
-                        <span class="skill-tag">RESTful APIs</span>
-                        <span class="skill-tag">Socket.IO</span>
-                    </div>
-                </div>
-                <div class="skill-category">
-                    <h3 class="category-title">
-                        <i data-lucide="database"></i>
-                        Databases
-                    </h3>
-                    <div class="skill-tags">
-                        <span class="skill-tag">PostgreSQL</span>
-                        <span class="skill-tag">MongoDB</span>
-                        <span class="skill-tag">Firebase Realtime DB</span>
-                    </div>
-                </div>
-                <div class="skill-category">
-                    <h3 class="category-title">
-                        <i data-lucide="cloud"></i>
-                        Cloud & DevOps
-                    </h3>
-                    <div class="skill-tags">
-                        <span class="skill-tag">AWS Amplify</span>
-                        <span class="skill-tag">Firebase Cloud Storage</span>
-                        <span class="skill-tag">Git</span>
-                        <span class="skill-tag">GitLab</span>
-                        <span class="skill-tag">Bitbucket</span>
-                    </div>
-                </div>
-                <div class="skill-category">
-                    <h3 class="category-title">
-                        <i data-lucide="wrench"></i>
-                        Tools & Libraries
-                    </h3>
-                    <div class="skill-tags">
-                        <span class="skill-tag">TypeScript</span>
-                        <span class="skill-tag">Stripe API</span>
-                        <span class="skill-tag">Google Maps API</span>
-                        <span class="skill-tag">One Signal</span>
-                        <span class="skill-tag">Jira</span>
-                    </div>
-                </div>
-                <div class="skill-category">
-                    <h3 class="category-title">
-                        <i data-lucide="settings"></i>
-                        Other
-                    </h3>
-                    <div class="skill-tags">
-                        <span class="skill-tag">Agile Development</span>
-                        <span class="skill-tag">Unit Testing</span>
-                        <span class="skill-tag">Debugging</span>
-                        <span class="skill-tag">Performance Optimization</span>
-                    </div>
-                </div>
-                <div class="skill-category">
-                    <h3 class="category-title">
-                        <i data-lucide="code"></i>
-                        Problem Solving
-                    </h3>
-                    <div class="skill-tags">
-                        <a href="https://www.hackerrank.com/profile/ismail_AlSaleh" target="_blank"
-                            rel="noopener noreferrer" class="skill-tag" title="View HackerRank Profile"
-                            style="text-decoration: none; display: inline-flex; align-items: center; gap: 6px;">
-                            <i class="fa fa-code"></i> HackerRank <i class="fa fa-external-link"
-                                style="font-size: 0.75rem; opacity: 0.7;"></i>
-                        </a>
-                        <a href="https://www.codewars.com/users/ismail_alsaleh" target="_blank"
-                            rel="noopener noreferrer" class="skill-tag" title="View Codewars Profile"
-                            style="text-decoration: none; display: inline-flex; align-items: center; gap: 6px;">
-                            <i class="fa fa-terminal"></i> Codewars <i class="fa fa-external-link"
-                                style="font-size: 0.75rem; opacity: 0.7;"></i>
-                        </a>
-                        <a href="https://www.freecodecamp.org/ismail_alsaleh" target="_blank" rel="noopener noreferrer"
-                            class="skill-tag" title="View freeCodeCamp Profile"
-                            style="text-decoration: none; display: inline-flex; align-items: center; gap: 6px;">
-                            <i class="fa fa-free-code-camp"></i> freeCodeCamp <i class="fa fa-external-link"
-                                style="font-size: 0.75rem; opacity: 0.7;"></i>
-                        </a>
-                    </div>
-                </div>
-            </div>
+      <div class="container">
+        <h2 class="section-title reveal">Technical Skills</h2>
+        <div class="skills-grid reveal-stagger" id="skills-grid">
+          <!-- Dynamically loaded from Firestore -->
         </div>
+      </div>
     </section>
 
     <!-- Experience Section -->
     <section id="experience" class="section">
-        <div class="container">
-            <h2 class="section-title">Professional Experience</h2>
-            <div class="experience-timeline">
-                <div class="timeline-item">
-                    <div class="timeline-content">
-                        <div class="timeline-header">
-                            <h3 class="job-title">Full Stack JavaScript Developer</h3>
-                            <span class="company">LeaseTeq AG</span>
-                            <span class="duration">Jul 2025 – Aug 2025</span>
-                        </div>
-                        <div class="tech-stack">
-                            <span class="tech-tag">Next.js</span>
-                            <span class="tech-tag">Tailwind CSS</span>
-                            <span class="tech-tag">JavaScript</span>
-                        </div>
-                        <ul class="responsibilities">
-                            <li>Developed and integrated features for both the front-end and back-end using Next.js</li>
-                            <li>Implemented responsive UI components using Tailwind CSS</li>
-                            <li>Fixed high-priority bugs and helped the team to resolve new ones</li>
-                        </ul>
-                    </div>
-                </div>
-
-                <div class="timeline-item">
-                    <div class="timeline-content">
-                        <div class="timeline-header">
-                            <h3 class="job-title">Full Stack JavaScript Developer</h3>
-                            <span class="company">Ruh Corp</span>
-                            <span class="duration">Sep 2022 – Oct 2023</span>
-                        </div>
-                        <div class="tech-stack">
-                            <span class="tech-tag">TypeScript</span>
-                            <span class="tech-tag">React</span>
-                            <span class="tech-tag">React Native</span>
-                            <span class="tech-tag">Stripe</span>
-                        </div>
-                        <ul class="responsibilities">
-                            <li>Upgraded React Native version and updated libraries to improve performance and security
-                            </li>
-                            <li>Integrated Google Pay and Apple Pay using Stripe Gateway, enhancing payment options for
-                                users</li>
-                            <li>Implemented Google Analytics to track user behavior and improve decision-making</li>
-                            <li>Set up In-App Purchase (IAP) payment system, increasing revenue streams</li>
-                        </ul>
-                    </div>
-                </div>
-
-                <div class="timeline-item">
-                    <div class="timeline-content">
-                        <div class="timeline-header">
-                            <h3 class="job-title">React & React Native Developer</h3>
-                            <span class="company">Casting Arabia LLC</span>
-                            <span class="duration">Jan 2022 – Jul 2022</span>
-                        </div>
-                        <div class="tech-stack">
-                            <span class="tech-tag">TypeScript</span>
-                            <span class="tech-tag">React</span>
-                            <span class="tech-tag">React Native</span>
-                            <span class="tech-tag">Next.js</span>
-                            <span class="tech-tag">Material-UI</span>
-                            <span class="tech-tag">AWS Amplify</span>
-                        </div>
-                        <ul class="responsibilities">
-                            <li>Migrated the codebase from JavaScript to TypeScript, improving code maintainability and
-                                reducing bugs</li>
-                            <li>Integrated Facebook, LinkedIn, and Apple Login for seamless user authentication</li>
-                            <li>Implemented UI components using Next.js (SSR) and Material-UI, ensuring responsive
-                                design</li>
-                            <li>Deployed Next.js app on AWS Amplify and linked it with GoDaddy domain</li>
-                        </ul>
-                    </div>
-                </div>
-
-                <div class="timeline-item">
-                    <div class="timeline-content">
-                        <div class="timeline-header">
-                            <h3 class="job-title">React Native Developer (Part-time)</h3>
-                            <span class="company">NISR Project</span>
-                            <span class="duration">Feb 2021 – Jun 2022</span>
-                        </div>
-                        <div class="tech-stack">
-                            <span class="tech-tag">React Native</span>
-                            <span class="tech-tag">Firebase</span>
-                        </div>
-                        <ul class="responsibilities">
-                            <li>Integrated the application with Firebase Realtime DB, Cloud Storage, and Firebase
-                                Authentication</li>
-                            <li>Ensured secure and scalable data management</li>
-                        </ul>
-                    </div>
-                </div>
-
-                <div class="timeline-item">
-                    <div class="timeline-content">
-                        <div class="timeline-header">
-                            <h3 class="job-title">React Native Developer</h3>
-                            <span class="company">Various Projects & Clients</span>
-                            <span class="duration">Jan 2019 – Jan 2022</span>
-                        </div>
-                        <div class="tech-stack">
-                            <span class="tech-tag">React Native</span>
-                            <span class="tech-tag">React.js</span>
-                            <span class="tech-tag">Firebase</span>
-                            <span class="tech-tag">Google Maps API</span>
-                            <span class="tech-tag">Laravel</span>
-                            <span class="tech-tag">Django</span>
-                            <span class="tech-tag">Feathers.js</span>
-                        </div>
-                        <ul class="responsibilities">
-                            <li>Developed and deployed 7+ mobile applications to Apple App Store and Google Play Store
-                            </li>
-                            <li>Integrated various Firebase services for data, authentication, messaging, and
-                                notifications</li>
-                            <li>Implemented Google Maps for tracking moving points and locating targets</li>
-                            <li>Collaborated with teams using PHP Laravel, Python Django, and Feathers.js APIs</li>
-                            <li>Built pixel-perfect, smooth UIs for both iOS and Android platforms</li>
-                            <li>Developed reusable React.js and React Native components</li>
-                        </ul>
-                    </div>
-                </div>
+      <div class="container">
+        <h2 class="section-title reveal">Professional Experience</h2>
+        <div class="experience-timeline">
+          <div class="timeline-item">
+            <div class="timeline-content">
+              <div class="timeline-header">
+                <h3 class="job-title">Full Stack JavaScript Developer</h3>
+                <span class="company">LeaseTeq AG</span>
+                <span class="duration">Jul 2025 – Aug 2025</span>
+              </div>
+              <div class="tech-stack">
+                <span class="tech-tag">Next.js</span>
+                <span class="tech-tag">Tailwind CSS</span>
+                <span class="tech-tag">JavaScript</span>
+              </div>
+              <ul class="responsibilities">
+                <li>
+                  Developed and integrated features for both the front-end and
+                  back-end using Next.js
+                </li>
+                <li>Implemented responsive UI components using Tailwind CSS</li>
+                <li>
+                  Fixed high-priority bugs and helped the team to resolve new
+                  ones
+                </li>
+              </ul>
             </div>
+          </div>
+
+          <div class="timeline-item">
+            <div class="timeline-content">
+              <div class="timeline-header">
+                <h3 class="job-title">Full Stack JavaScript Developer</h3>
+                <span class="company">Ruh Corp</span>
+                <span class="duration">Sep 2022 – Oct 2023</span>
+              </div>
+              <div class="tech-stack">
+                <span class="tech-tag">TypeScript</span>
+                <span class="tech-tag">React</span>
+                <span class="tech-tag">React Native</span>
+                <span class="tech-tag">Stripe</span>
+              </div>
+              <ul class="responsibilities">
+                <li>
+                  Upgraded React Native version and updated libraries to improve
+                  performance and security
+                </li>
+                <li>
+                  Integrated Google Pay and Apple Pay using Stripe Gateway,
+                  enhancing payment options for users
+                </li>
+                <li>
+                  Implemented Google Analytics to track user behavior and
+                  improve decision-making
+                </li>
+                <li>
+                  Set up In-App Purchase (IAP) payment system, increasing
+                  revenue streams
+                </li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="timeline-item">
+            <div class="timeline-content">
+              <div class="timeline-header">
+                <h3 class="job-title">React & React Native Developer</h3>
+                <span class="company">Casting Arabia LLC</span>
+                <span class="duration">Jan 2022 – Jul 2022</span>
+              </div>
+              <div class="tech-stack">
+                <span class="tech-tag">TypeScript</span>
+                <span class="tech-tag">React</span>
+                <span class="tech-tag">React Native</span>
+                <span class="tech-tag">Next.js</span>
+                <span class="tech-tag">Material-UI</span>
+                <span class="tech-tag">AWS Amplify</span>
+              </div>
+              <ul class="responsibilities">
+                <li>
+                  Migrated the codebase from JavaScript to TypeScript, improving
+                  code maintainability and reducing bugs
+                </li>
+                <li>
+                  Integrated Facebook, LinkedIn, and Apple Login for seamless
+                  user authentication
+                </li>
+                <li>
+                  Implemented UI components using Next.js (SSR) and Material-UI,
+                  ensuring responsive design
+                </li>
+                <li>
+                  Deployed Next.js app on AWS Amplify and linked it with GoDaddy
+                  domain
+                </li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="timeline-item">
+            <div class="timeline-content">
+              <div class="timeline-header">
+                <h3 class="job-title">React Native Developer (Part-time)</h3>
+                <span class="company">NISR Project</span>
+                <span class="duration">Feb 2021 – Jun 2022</span>
+              </div>
+              <div class="tech-stack">
+                <span class="tech-tag">React Native</span>
+                <span class="tech-tag">Firebase</span>
+              </div>
+              <ul class="responsibilities">
+                <li>
+                  Integrated the application with Firebase Realtime DB, Cloud
+                  Storage, and Firebase Authentication
+                </li>
+                <li>Ensured secure and scalable data management</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="timeline-item">
+            <div class="timeline-content">
+              <div class="timeline-header">
+                <h3 class="job-title">React Native Developer</h3>
+                <span class="company">Various Projects & Clients</span>
+                <span class="duration">Jan 2019 – Jan 2022</span>
+              </div>
+              <div class="tech-stack">
+                <span class="tech-tag">React Native</span>
+                <span class="tech-tag">React.js</span>
+                <span class="tech-tag">Firebase</span>
+                <span class="tech-tag">Google Maps API</span>
+                <span class="tech-tag">Laravel</span>
+                <span class="tech-tag">Django</span>
+                <span class="tech-tag">Feathers.js</span>
+              </div>
+              <ul class="responsibilities">
+                <li>
+                  Developed and deployed 7+ mobile applications to Apple App
+                  Store and Google Play Store
+                </li>
+                <li>
+                  Integrated various Firebase services for data, authentication,
+                  messaging, and notifications
+                </li>
+                <li>
+                  Implemented Google Maps for tracking moving points and
+                  locating targets
+                </li>
+                <li>
+                  Collaborated with teams using PHP Laravel, Python Django, and
+                  Feathers.js APIs
+                </li>
+                <li>
+                  Built pixel-perfect, smooth UIs for both iOS and Android
+                  platforms
+                </li>
+                <li>Developed reusable React.js and React Native components</li>
+              </ul>
+            </div>
+          </div>
         </div>
+      </div>
     </section>
 
     <!-- Projects Section -->
     <section id="projects" class="section bg-light">
-        <div class="container">
-            <h2 class="section-title">My Projects</h2>
+      <div class="container">
+        <h2 class="section-title">My Projects</h2>
 
-            <h3 class="projects-category-title">Websites</h3>
-            <div class="projects-grid">
-                <div class="project-card">
-                    <div class="project-image">
-                        <a href="https://geolocationdataanalysis-app.herokuapp.com/" target="_blank"
-                            rel="noopener noreferrer">
-                            <img src="img/pro-1.png" alt="Geo Location Data Analysis" />
-                        </a>
-                    </div>
-                    <div class="project-header">
-                        <h3>Geo Location Data Analysis</h3>
-                    </div>
-                    <p>Web application for analyzing geolocation data</p>
-                    <div class="project-links">
-                        <a href="https://geolocationdataanalysis-app.herokuapp.com/" target="_blank"
-                            rel="noopener noreferrer" class="project-link">View Project</a>
-                    </div>
-                </div>
-
-                <div class="project-card">
-                    <div class="project-image">
-                        <a href="https://hawas-studio-app.herokuapp.com" target="_blank" rel="noopener noreferrer">
-                            <img src="img/pro-2.png" alt="Hawas Studio" />
-                        </a>
-                    </div>
-                    <div class="project-header">
-                        <h3>Hawas Studio</h3>
-                    </div>
-                    <p>Studio management web application</p>
-                    <div class="project-links">
-                        <a href="https://hawas-studio-app.herokuapp.com" target="_blank" rel="noopener noreferrer"
-                            class="project-link">View Project</a>
-                    </div>
-                </div>
-
-                <div class="project-card">
-                    <div class="project-image">
-                        <a href="https://globaldentelgatway.herokuapp.com/doctor" target="_blank"
-                            rel="noopener noreferrer">
-                            <img src="img/pro-3.png" alt="Global Dental Gateway" />
-                        </a>
-                    </div>
-                    <div class="project-header">
-                        <h3>Global Dental Gateway</h3>
-                    </div>
-                    <p>Dental services platform for doctors</p>
-                    <div class="project-links">
-                        <a href="https://globaldentelgatway.herokuapp.com/doctor" target="_blank"
-                            rel="noopener noreferrer" class="project-link">View Project</a>
-                    </div>
-                </div>
-
-                <div class="project-card">
-                    <div class="project-image">
-                        <a href="https://MyPickle.netlify.com" target="_blank" rel="noopener noreferrer">
-                            <img src="img/pro-4.png" alt="MyPickle" />
-                        </a>
-                    </div>
-                    <div class="project-header">
-                        <h3>MyPickle</h3>
-                    </div>
-                    <p>Web application built with modern technologies</p>
-                    <div class="project-links">
-                        <a href="https://MyPickle.netlify.com" target="_blank" rel="noopener noreferrer"
-                            class="project-link">View Project</a>
-                    </div>
-                </div>
-
-                <div class="project-card">
-                    <div class="project-image">
-                        <a href="https://www.castingarabia.com/" target="_blank" rel="noopener noreferrer">
-                            <img src="img/casting-arabia.png" alt="Casting Arabia" />
-                        </a>
-                    </div>
-                    <div class="project-header">
-                        <h3>Casting Arabia</h3>
-                    </div>
-                    <p>Casting platform website</p>
-                    <div class="project-links">
-                        <a href="https://www.castingarabia.com/" target="_blank" rel="noopener noreferrer"
-                            class="project-link">View Project</a>
-                    </div>
-                </div>
-            </div>
-
-            <h3 class="projects-category-title">React Native Mobile Apps</h3>
-            <div class="projects-grid">
-                <div class="project-card">
-                    <div class="project-image">
-                        <a href="https://play.google.com/store/apps/details?id=com.plutoo.plutoo" target="_blank"
-                            rel="noopener noreferrer">
-                            <img src="img/plutoo.png" alt="Plutoo App" />
-                        </a>
-                    </div>
-                    <div class="project-header">
-                        <h3>Plutoo</h3>
-                    </div>
-                    <p>Mobile application available on Android and iOS</p>
-                    <div class="project-links">
-                        <a href="https://play.google.com/store/apps/details?id=com.plutoo.plutoo" target="_blank"
-                            rel="noopener noreferrer" class="project-link">Google Play</a>
-                    </div>
-                </div>
-
-                <div class="project-card">
-                    <div class="project-image">
-                        <a href="https://play.google.com/store/apps/details?id=com.seetah" target="_blank"
-                            rel="noopener noreferrer">
-                            <img src="img/Seetah.png" alt="Seetah App" />
-                        </a>
-                    </div>
-                    <div class="project-header">
-                        <h3>Seetah</h3>
-                    </div>
-                    <p>Mobile application available on Android</p>
-                    <div class="project-links">
-                        <a href="https://play.google.com/store/apps/details?id=com.seetah" target="_blank"
-                            rel="noopener noreferrer" class="project-link">Google Play</a>
-                    </div>
-                </div>
-
-                <div class="project-card">
-                    <div class="project-image">
-                        <a href="https://apps.apple.com/tt/app/al-obaidi-brothers-for-cars/id1613332241" target="_blank"
-                            rel="noopener noreferrer">
-                            <img src="img/obaidi.png" alt="Al Obaidi Brothers" />
-                        </a>
-                    </div>
-                    <div class="project-header">
-                        <h3>Al Obaidi Brothers</h3>
-                    </div>
-                    <p>Car dealership mobile app</p>
-                    <div class="project-links">
-                        <a href="https://apps.apple.com/tt/app/al-obaidi-brothers-for-cars/id1613332241" target="_blank"
-                            rel="noopener noreferrer" class="project-link">App Store</a>
-                    </div>
-                </div>
-
-                <div class="project-card">
-                    <div class="project-image">
-                        <a href="https://apps.apple.com/tt/app/casting-arabia/id1606692901" target="_blank"
-                            rel="noopener noreferrer">
-                            <img src="img/casting-arabia.png" alt="Casting Arabia App" />
-                        </a>
-                    </div>
-                    <div class="project-header">
-                        <h3>Casting Arabia App</h3>
-                    </div>
-                    <p>Mobile application for casting platform</p>
-                    <div class="project-links">
-                        <a href="https://apps.apple.com/tt/app/casting-arabia/id1606692901" target="_blank"
-                            rel="noopener noreferrer" class="project-link">App Store</a>
-                    </div>
-                </div>
-
-                <div class="project-card">
-                    <div class="project-image">
-                        <a href="https://play.google.com/store/apps/details?id=com.myruh&hl=en&pli=1" target="_blank"
-                            rel="noopener noreferrer">
-                            <img src="img/ruh-logo.png" alt="Ruh App" />
-                        </a>
-                    </div>
-                    <div class="project-header">
-                        <h3>Ruh</h3>
-                    </div>
-                    <p>Mobile application available on Android</p>
-                    <div class="project-links">
-                        <a href="https://play.google.com/store/apps/details?id=com.myruh&hl=en&pli=1" target="_blank"
-                            rel="noopener noreferrer" class="project-link">Google Play</a>
-                    </div>
-                </div>
-            </div>
+        <!-- Websites from Firebase -->
+        <div id="projects-websites-container">
+          <h3 class="projects-category-title">Websites</h3>
+          <div class="projects-grid" id="projects-websites-grid">
+            <!-- Dynamically loaded from Firestore -->
+          </div>
         </div>
+
+        <!-- Mobile Apps from Firebase -->
+        <div id="projects-mobile-container">
+          <h3 class="projects-category-title">React Native Mobile Apps</h3>
+          <div class="projects-grid" id="projects-mobile-grid">
+            <!-- Dynamically loaded from Firestore -->
+          </div>
+        </div>
+      </div>
     </section>
 
     <!-- Education Section -->
     <section id="education" class="section">
-        <div class="container">
-            <h2 class="section-title">Education & Training</h2>
-            <div class="education-timeline">
-                <div class="timeline-item">
-                    <div class="timeline-content">
-                        <div class="timeline-header">
-                            <h3 class="degree">Bachelor of Computer Science</h3>
-                            <span class="institution">Al-Azhar University, Gaza</span>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="timeline-item">
-                    <div class="timeline-content">
-                        <div class="timeline-header">
-                            <h3 class="degree">Freelance and Social Media Marketing</h3>
-                            <span class="institution">Gaza Sky Geeks, Gaza</span>
-                            <span class="duration">May 2018 – Jul 2018</span>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="timeline-item">
-                    <div class="timeline-content">
-                        <div class="timeline-header">
-                            <h3 class="degree">Full-Stack JavaScript Web Development</h3>
-                            <span class="institution">Gaza Sky Geeks, Gaza</span>
-                            <span class="duration">Nov 2017 – Apr 2018</span>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="timeline-item">
-                    <div class="timeline-content">
-                        <div class="timeline-header">
-                            <h3 class="degree">Web Applications Development</h3>
-                            <span class="institution">Center of Competence in IT Sector, Gaza</span>
-                            <span class="duration">Nov 2016 – Dec 2016</span>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="timeline-item">
-                    <div class="timeline-content">
-                        <div class="timeline-header">
-                            <h3 class="degree">Professional Ethical Hacker</h3>
-                            <span class="institution">Guidance Co. For Consultations & Training, Gaza</span>
-                            <span class="duration">Aug 2016 – Oct 2016</span>
-                        </div>
-                    </div>
-                </div>
+      <div class="container">
+        <h2 class="section-title">Education & Training</h2>
+        <div class="education-timeline">
+          <div class="timeline-item">
+            <div class="timeline-content">
+              <div class="timeline-header">
+                <h3 class="degree">Bachelor of Computer Science</h3>
+                <span class="institution">Al-Azhar University, Gaza</span>
+              </div>
             </div>
+          </div>
 
-            <div class="mentoring-section">
-                <h3 class="mentoring-title">
-                    <i data-lucide="users"></i>
-                    Mentoring Experience
-                </h3>
-                <p>
-                    <strong>Coding Academy Mentor</strong> at Gaza Sky Geeks, Gaza | Nov 2017 – Apr 2018
-                </p>
-                <p>
-                    Mentored aspiring developers in JavaScript and web development, fostering a collaborative
-                    learning environment and helping students build their first applications.
-                </p>
+          <div class="timeline-item">
+            <div class="timeline-content">
+              <div class="timeline-header">
+                <h3 class="degree">Freelance and Social Media Marketing</h3>
+                <span class="institution">Gaza Sky Geeks, Gaza</span>
+                <span class="duration">May 2018 – Jul 2018</span>
+              </div>
             </div>
+          </div>
+
+          <div class="timeline-item">
+            <div class="timeline-content">
+              <div class="timeline-header">
+                <h3 class="degree">Full-Stack JavaScript Web Development</h3>
+                <span class="institution">Gaza Sky Geeks, Gaza</span>
+                <span class="duration">Nov 2017 – Apr 2018</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="timeline-item">
+            <div class="timeline-content">
+              <div class="timeline-header">
+                <h3 class="degree">Web Applications Development</h3>
+                <span class="institution"
+                  >Center of Competence in IT Sector, Gaza</span
+                >
+                <span class="duration">Nov 2016 – Dec 2016</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="timeline-item">
+            <div class="timeline-content">
+              <div class="timeline-header">
+                <h3 class="degree">Professional Ethical Hacker</h3>
+                <span class="institution"
+                  >Guidance Co. For Consultations & Training, Gaza</span
+                >
+                <span class="duration">Aug 2016 – Oct 2016</span>
+              </div>
+            </div>
+          </div>
         </div>
+
+        <div class="mentoring-section">
+          <h3 class="mentoring-title">
+            <i data-lucide="users"></i>
+            Mentoring Experience
+          </h3>
+          <p>
+            <strong>Coding Academy Mentor</strong> at Gaza Sky Geeks, Gaza | Nov
+            2017 – Apr 2018
+          </p>
+          <p>
+            Mentored aspiring developers in JavaScript and web development,
+            fostering a collaborative learning environment and helping students
+            build their first applications.
+          </p>
+        </div>
+      </div>
     </section>
 
     <!-- Reviews Section -->
     <section id="reviews" class="section bg-light">
-        <div class="container">
-            <h2 class="section-title">Client Reviews</h2>
-            <div class="reviews-grid">
-                <div class="review-card">
-                    <div class="review-header">
-                        <div class="review-meta">
-                            <div class="review-avatar">
-                                <img src="img/client-1.jpeg" alt="Client Review" />
-                            </div>
-                            <div class="review-meta-text">
-                                <h4>Client Name</h4>
-                                <span>Verified Client</span>
-                            </div>
-                        </div>
-                        <a href="https://www.linkedin.com/in/ismail-alsaleh/details/recommendations/" target="_blank"
-                            rel="noopener noreferrer" class="review-linkedin" title="View Recommendation on LinkedIn">
-                            <i class="fa fa-linkedin-square"></i>
-                        </a>
-                    </div>
-                    <div class="review-ratings">
-                        <i class="fa fa-star"></i>
-                        <i class="fa fa-star"></i>
-                        <i class="fa fa-star"></i>
-                        <i class="fa fa-star"></i>
-                        <i class="fa fa-star"></i>
-                    </div>
-                    <div class="review-text">
-                        <p>
-                            "Not only that Ismail is a knowledgeable in several aspects of app
-                            development, but he is also a hard worker and a pleasant person to
-                            work with. I wish him the best of luck."
-                        </p>
-                    </div>
-                </div>
-            </div>
+      <div class="container">
+        <h2 class="section-title">Client Reviews</h2>
+        <div class="reviews-grid" id="reviews-grid">
+          <!-- Dynamically loaded from Firestore -->
         </div>
+      </div>
     </section>
 
     <!-- Contact Section -->
     <section id="contact" class="section">
-        <div class="container">
-            <h2 class="section-title">Get In Touch</h2>
-            <div class="contact-content">
-                <div class="contact-info">
-                    <h3>Let's discuss your next project</h3>
-                    <p>
-                        I'm always interested in hearing about new opportunities,
-                        whether that's a full-time role, contract work, or consulting.
-                        Feel free to reach out!
-                    </p>
-                    <div class="contact-details">
-                        <div class="contact-detail">
-                            <i data-lucide="mail"></i>
-                            <span><a href="mailto:ismail.1996.1.9@gmail.com">ismail.1996.1.9@gmail.com</a></span>
-                        </div>
-                        <div class="contact-detail">
-                            <i data-lucide="phone"></i>
-                            <span>(+970) 592742081</span>
-                        </div>
-                    </div>
-                </div>
-                <div class="contact-form">
-                    <form action="https://formsubmit.co/ismail.1996.1.9@gmail.com" method="POST"
-                        enctype="multipart/form-data" id="contactForm">
-                        <input type="hidden" name="_next" value="thank-you.html">
-                        <input type="hidden" name="_captcha" value="false">
-                        <div class="form-group">
-                            <label for="email">Email</label>
-                            <input type="email" id="email" name="_replyto" required placeholder="Enter your email">
-                        </div>
-                        <div class="form-group">
-                            <label for="message">Message</label>
-                            <textarea id="message" name="message" rows="5" required
-                                placeholder="Your message"></textarea>
-                        </div>
-                        <button type="submit" class="btn btn-primary">Send Message</button>
-                    </form>
-                </div>
+      <div class="container">
+        <h2 class="section-title">Get In Touch</h2>
+        <div class="contact-content">
+          <div class="contact-info">
+            <h3>Ready to start your project?</h3>
+            <p>
+              Whether you need a full-time role filled, contract work, or
+              specialized consulting, I'm ready to bring your vision to life.
+            </p>
+            <div style="margin: 1.5rem 0">
+              <a
+                href="https://calendly.com/ismail-alsaleh/30min"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="btn btn-primary"
+                style="width: 100%; justify-content: center"
+                >Schedule a Free Discovery Call</a
+              >
             </div>
+            <p
+              style="
+                font-size: 0.875rem;
+                color: var(--text-secondary);
+                margin-top: 1rem;
+              "
+            >
+              Or send me a direct message below:
+            </p>
+            <div class="contact-details">
+              <div class="contact-detail">
+                <i data-lucide="mail"></i>
+                <span id="contact-email"
+                  ><a href="mailto:ismail.1996.1.9@gmail.com"
+                    >ismail.1996.1.9@gmail.com</a
+                  ></span
+                >
+              </div>
+              <div class="contact-detail">
+                <i class="fa fa-whatsapp"></i>
+                <span id="contact-whatsapp"
+                  ><a
+                    href="https://wa.me/970592742081"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    >Chat on WhatsApp</a
+                  ></span
+                >
+              </div>
+            </div>
+          </div>
+          <div class="contact-form">
+            <form
+              action="https://formsubmit.co/ismail.1996.1.9@gmail.com"
+              method="POST"
+              enctype="multipart/form-data"
+              id="contactForm"
+            >
+              <input type="hidden" name="_next" value="thank-you.html" />
+              <input type="hidden" name="_captcha" value="false" />
+              <div class="form-group">
+                <label for="email">Email</label>
+                <input
+                  type="email"
+                  id="email"
+                  name="_replyto"
+                  required
+                  placeholder="Enter your email"
+                />
+              </div>
+              <div class="form-group">
+                <label for="message">Message</label>
+                <textarea
+                  id="message"
+                  name="message"
+                  rows="5"
+                  required
+                  placeholder="Your message"
+                ></textarea>
+              </div>
+              <button type="submit" class="btn btn-primary">
+                Send Message
+              </button>
+            </form>
+          </div>
         </div>
+      </div>
     </section>
 
     <!-- Footer -->
     <footer class="footer">
-        <div class="container">
-            <p>&copy; 2026 Ismail S. Al-Saleh. All rights reserved.</p>
-            <p>Built with passion and modern web technologies.</p>
-        </div>
+      <div class="footer-bottom">
+        <div class="footer-logo">I. A</div>
+        <p>
+          &copy; <span id="current-year"></span> Ismail S. Al-Saleh. All Rights
+          Reserved.
+        </p>
+        <p>Built with passion and modern web technologies.</p>
+      </div>
     </footer>
 
-    <script src="script.js"></script>
-</body>
+    <!-- ========== CV PREVIEW MODAL ========== -->
+    <div
+      id="cv-modal"
+      style="
+        display: none;
+        position: fixed;
+        inset: 0;
+        z-index: 2000;
+        background: rgba(0, 0, 0, 0.75);
+        backdrop-filter: blur(4px);
+        align-items: center;
+        justify-content: center;
+        padding: 1.5rem;
+      "
+    >
+      <div
+        style="
+          background: var(--surface);
+          border-radius: var(--radius-md);
+          width: 100%;
+          max-width: 860px;
+          max-height: 90vh;
+          display: flex;
+          flex-direction: column;
+          box-shadow: 0 24px 64px rgba(0, 0, 0, 0.4);
+        "
+      >
+        <!-- Modal Header -->
+        <div
+          style="
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 1.5rem;
+            border-bottom: 1px solid var(--border);
+            flex-shrink: 0;
+          "
+        >
+          <h3 style="margin: 0; font-size: 1rem">
+            📄 Ismail S. Al-Saleh — CV Preview
+          </h3>
+          <div style="display: flex; gap: 0.75rem; align-items: center">
+            <a
+              id="cv-modal-download"
+              href="#"
+              target="_blank"
+              style="
+                font-size: 0.8rem;
+                color: var(--primary-500);
+                text-decoration: none;
+                font-weight: 500;
+              "
+              >⬇ Download</a
+            >
+            <button
+              id="cv-modal-close"
+              style="
+                background: none;
+                border: none;
+                font-size: 1.5rem;
+                cursor: pointer;
+                color: var(--text-secondary);
+                line-height: 1;
+                padding: 0.25rem;
+              "
+              aria-label="Close CV preview"
+            >
+              ✕
+            </button>
+          </div>
+        </div>
+        <!-- Iframe -->
+        <iframe
+          id="cv-modal-iframe"
+          src=""
+          style="
+            flex: 1;
+            border: none;
+            border-radius: 0 0 var(--radius-md) var(--radius-md);
+            min-height: 70vh;
+          "
+          allowfullscreen
+        ></iframe>
+      </div>
+    </div>
 
+    <script type="module" src="assets/js/script.js"></script>
+  </body>
 </html>
