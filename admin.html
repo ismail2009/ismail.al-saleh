@@ -103,6 +103,67 @@
         font-size: 0.8rem;
       }
 
+      .status-badge {
+        font-size: 0.72rem;
+        padding: 0.2rem 0.5rem;
+        border-radius: 9999px;
+        font-weight: 600;
+        display: inline-flex;
+        align-items: center;
+        gap: 0.25rem;
+      }
+
+      .status-badge.visible {
+        background: #dcfce7;
+        color: #15803d;
+      }
+
+      .status-badge.hidden {
+        background: #fee2e2;
+        color: #b91c1c;
+      }
+
+      .toggle-btn {
+        border: none;
+        padding: 0.35rem 0.65rem;
+        border-radius: var(--radius-sm);
+        cursor: pointer;
+        font-size: 0.75rem;
+        font-weight: 500;
+        transition: var(--transition);
+        white-space: nowrap;
+      }
+
+      .toggle-btn.btn-hide {
+        background: #f3f4f6;
+        color: #4b5563;
+        border: 1px solid var(--border);
+      }
+
+      .toggle-btn.btn-hide:hover {
+        background: #e5e7eb;
+        color: #111827;
+      }
+
+      .toggle-btn.btn-show {
+        background: #0057ff;
+        color: #ffffff;
+      }
+
+      .toggle-btn.btn-show:hover {
+        background: #004ad8;
+      }
+
+      .list-item.is-hidden {
+        background: #f9fafb;
+        border-style: dashed;
+        border-color: #d1d5db;
+      }
+
+      .list-item.is-hidden strong {
+        color: #6b7280;
+      }
+
       .success-text {
         color: #16a34a;
         font-weight: 500;
@@ -488,6 +549,26 @@
             <div class="form-group">
               <label>Project Link (URL)</label>
               <input type="url" id="projLink" placeholder="https://..." />
+            </div>
+            <div class="form-group" style="margin-bottom: 1.25rem">
+              <label
+                style="
+                  display: inline-flex;
+                  align-items: center;
+                  gap: 0.5rem;
+                  cursor: pointer;
+                  font-weight: 500;
+                  font-size: 0.875rem;
+                "
+              >
+                <input
+                  type="checkbox"
+                  id="projIsVisible"
+                  checked
+                  style="width: auto; cursor: pointer"
+                />
+                <span>Show on public website (إظهار في الموقع)</span>
+              </label>
             </div>
             <div style="display: flex; gap: 1rem">
               <button

@@ -187,19 +187,42 @@ function buildProjectCard(proj) {
 async function loadProjects() {
   const websitesGrid = document.getElementById("projects-websites-grid");
   const mobileGrid = document.getElementById("projects-mobile-grid");
+  const websitesContainer = document.getElementById(
+    "projects-websites-container",
+  );
+  const mobileContainer = document.getElementById("projects-mobile-container");
+
   try {
     const q = query(collection(db, "projects"), orderBy("createdAt"));
     const snap = await getDocs(q);
     if (snap.empty) return;
     if (websitesGrid) websitesGrid.innerHTML = "";
     if (mobileGrid) mobileGrid.innerHTML = "";
+
+    let websitesCount = 0;
+    let mobileCount = 0;
+
     snap.forEach((d) => {
       const proj = d.data();
+      // Skip projects that are marked as hidden
+      if (proj.isVisible === false) return;
+
       const card = buildProjectCard(proj);
-      if (proj.category === "Websites" && websitesGrid)
+      if (proj.category === "Websites" && websitesGrid) {
         websitesGrid.innerHTML += card;
-      else if (mobileGrid) mobileGrid.innerHTML += card;
+        websitesCount++;
+      } else if (mobileGrid) {
+        mobileGrid.innerHTML += card;
+        mobileCount++;
+      }
     });
+
+    if (websitesContainer) {
+      websitesContainer.style.display = websitesCount > 0 ? "" : "none";
+    }
+    if (mobileContainer) {
+      mobileContainer.style.display = mobileCount > 0 ? "" : "none";
+    }
   } catch (err) {
     console.warn("Projects unavailable:", err);
   }

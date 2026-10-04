@@ -118,6 +118,7 @@ const PROJECTS = [
     result: "An interactive web dashboard with advanced mapping capabilities.",
     techStack: ["React", "Mapbox API"],
     link: "https://geolocationdataanalysis-app.herokuapp.com/",
+    isVisible: true,
     createdAt: new Date("2021-01-01"),
   },
   {
@@ -129,6 +130,7 @@ const PROJECTS = [
       "A complete management dashboard reducing admin time significantly.",
     techStack: ["React", "Node.js"],
     link: "https://hawas-studio-app.herokuapp.com",
+    isVisible: true,
     createdAt: new Date("2021-06-01"),
   },
   {
@@ -139,6 +141,7 @@ const PROJECTS = [
     result: "A centralized platform improving booking and patient tracking.",
     techStack: ["React", "TypeScript"],
     link: "https://globaldentelgatway.herokuapp.com/doctor",
+    isVisible: true,
     createdAt: new Date("2022-01-01"),
   },
   {
@@ -150,6 +153,7 @@ const PROJECTS = [
       "A fully functional web application built with modern technologies.",
     techStack: ["React", "Node.js"],
     link: "https://MyPickle.netlify.com",
+    isVisible: true,
     createdAt: new Date("2022-06-01"),
   },
   {
@@ -160,6 +164,7 @@ const PROJECTS = [
     result: "A fully-featured casting website connecting talent and agencies.",
     techStack: ["React", "TypeScript"],
     link: "https://www.castingarabia.com/",
+    isVisible: true,
     createdAt: new Date("2023-01-01"),
   },
   {
@@ -170,6 +175,7 @@ const PROJECTS = [
     result: "Scaled successfully to thousands of active users on both stores.",
     techStack: ["React Native", "Redux"],
     link: "https://play.google.com/store/apps/details?id=com.plutoo.plutoo",
+    isVisible: true,
     createdAt: new Date("2021-09-01"),
   },
   {
@@ -180,6 +186,7 @@ const PROJECTS = [
     result: "A polished app successfully deployed on Google Play Store.",
     techStack: ["React Native", "Firebase"],
     link: "https://play.google.com/store/apps/details?id=com.seetah",
+    isVisible: true,
     createdAt: new Date("2022-03-01"),
   },
   {
@@ -190,6 +197,7 @@ const PROJECTS = [
     result: "A sleek car browsing app live on the App Store.",
     techStack: ["React Native", "REST API"],
     link: "https://apps.apple.com/tt/app/al-obaidi-brothers-for-cars/id1613332241",
+    isVisible: true,
     createdAt: new Date("2022-07-01"),
   },
   {
@@ -201,6 +209,7 @@ const PROJECTS = [
       "A full-featured mobile app live on both Google Play and App Store.",
     techStack: ["React Native", "Redux"],
     link: "https://apps.apple.com/tt/app/casting-arabia/id1606692901",
+    isVisible: true,
     createdAt: new Date("2023-02-01"),
   },
   {
@@ -211,6 +220,7 @@ const PROJECTS = [
     result: "Successfully deployed on Google Play with active users.",
     techStack: ["React Native", "Firebase"],
     link: "https://play.google.com/store/apps/details?id=com.myruh&hl=en&pli=1",
+    isVisible: true,
     createdAt: new Date("2023-06-01"),
   },
 ];

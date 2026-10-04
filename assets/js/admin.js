@@ -273,19 +273,34 @@ async function loadProjects() {
     const snap = await getDocs(q);
     snap.forEach((d) => {
       const proj = d.data();
+      const isVisible = proj.isVisible !== false; // Default true if undefined
       const div = document.createElement("div");
-      div.className = "list-item";
+      div.className = `list-item ${!isVisible ? "is-hidden" : ""}`;
       div.innerHTML = `
                 <div>
-                    <strong>${escapeHTML(proj.title)}</strong>
+                    <div style="display:flex;align-items:center;gap:0.5rem;flex-wrap:wrap">
+                        <strong>${escapeHTML(proj.title)}</strong>
+                        ${
+                          isVisible
+                            ? '<span class="status-badge visible">Visible</span>'
+                            : '<span class="status-badge hidden">Hidden</span>'
+                        }
+                    </div>
                     <span>${escapeHTML(proj.category)}</span>
                 </div>
-                <div>
+                <div style="display:flex;align-items:center;gap:0.4rem;">
+                    <button class="toggle-btn ${isVisible ? "btn-hide" : "btn-show"} toggle-visibility-btn" 
+                            data-id="${d.id}" 
+                            data-visible="${isVisible}" 
+                            title="${isVisible ? "إخفاء المشروع من الموقع" : "إظهار المشروع في الموقع"}">
+                        ${isVisible ? "🙈 Hide" : "👁️ Show"}
+                    </button>
                     <button class="btn btn-secondary edit-btn" style="padding:0.25rem 0.5rem;font-size:0.75rem" data-id="${d.id}" data-item='${JSON.stringify(proj).replace(/'/g, "&#39;")}'>Edit</button>
                     <button class="danger-btn" data-id="${d.id}" data-col="projects">Delete</button>
                 </div>`;
       list.appendChild(div);
     });
+    attachVisibilityListeners(list);
     attachDeleteListeners(list, loadProjects);
     attachEditListeners(list, {
       formId: "projectForm",
@@ -301,6 +316,7 @@ async function loadProjects() {
         techStack: "projTech",
         link: "projLink",
         category: "projCategory",
+        isVisible: "projIsVisible",
       },
     });
   } catch (e) {
@@ -308,9 +324,33 @@ async function loadProjects() {
   }
 }
 
+function attachVisibilityListeners(container) {
+  container.querySelectorAll(".toggle-visibility-btn").forEach((btn) => {
+    btn.addEventListener("click", async () => {
+      const id = btn.dataset.id;
+      const currentlyVisible = btn.dataset.visible === "true";
+      const newStatus = !currentlyVisible;
+      btn.disabled = true;
+      btn.textContent = "⏳...";
+      try {
+        await updateDoc(doc(db, "projects", id), {
+          isVisible: newStatus,
+        });
+        loadProjects();
+      } catch (err) {
+        console.error("Error updating project visibility:", err);
+        alert("Failed to update status: " + err.message);
+        btn.disabled = false;
+        btn.textContent = currentlyVisible ? "🙈 Hide" : "👁️ Show";
+      }
+    });
+  });
+}
+
 document.getElementById("projectForm").addEventListener("submit", async (e) => {
   e.preventDefault();
   const editId = document.getElementById("editProjectId").value;
+  const isVisibleEl = document.getElementById("projIsVisible");
   const data = {
     title: document.getElementById("projTitle").value,
     image: document.getElementById("projImage").value,
@@ -322,6 +362,7 @@ document.getElementById("projectForm").addEventListener("submit", async (e) => {
       .map((t) => t.trim()),
     link: document.getElementById("projLink").value,
     category: document.getElementById("projCategory").value,
+    isVisible: isVisibleEl ? isVisibleEl.checked : true,
   };
 
   if (editId) {
@@ -331,6 +372,7 @@ document.getElementById("projectForm").addEventListener("submit", async (e) => {
     data.createdAt = new Date();
     await addDoc(collection(db, "projects"), data);
     e.target.reset();
+    if (isVisibleEl) isVisibleEl.checked = true;
   }
   loadProjects();
 });
@@ -499,7 +541,9 @@ function attachEditListeners(container, config) {
       for (const [key, fieldId] of Object.entries(config.fields)) {
         const el = document.getElementById(fieldId);
         if (el) {
-          if (Array.isArray(item[key])) {
+          if (el.type === "checkbox") {
+            el.checked = item[key] !== false;
+          } else if (Array.isArray(item[key])) {
             el.value = item[key].join(", ");
           } else {
             el.value = item[key] || "";
@@ -528,6 +572,13 @@ function attachEditListeners(container, config) {
         document.getElementById(config.submitBtn).textContent =
           "Add " + config.entityName;
         cancelBtn.style.display = "none";
+        // Reset checkboxes if any
+        for (const fieldId of Object.values(config.fields)) {
+          const el = document.getElementById(fieldId);
+          if (el && el.type === "checkbox") {
+            el.checked = true;
+          }
+        }
       };
     });
   });
